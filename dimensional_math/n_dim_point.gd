@@ -47,7 +47,6 @@ func set_world(index: int):
 		node.visible = false
 	if _points3d.size() > index:
 		_points3d[index].visible = true
-		print("set")
 
 
 func get_position(camera: CompoundCamera = null) -> Variant:

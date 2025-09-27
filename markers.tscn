@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0tscgg5icyxt"]
+
+[ext_resource type="Material" uid="uid://bq7igwjx2scde" path="res://x.tres" id="1_jwdvc"]
+[ext_resource type="Material" uid="uid://cn7vcqtu5p3ps" path="res://y.tres" id="2_6g1lt"]
+[ext_resource type="Material" uid="uid://c26rone6vh6vv" path="res://z.tres" id="3_06il0"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q70jo"]
+material = ExtResource("1_jwdvc")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wsno6"]
+material = ExtResource("1_jwdvc")
+top_radius = 0.0
+bottom_radius = 0.05
+height = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hrer2"]
+material = ExtResource("2_6g1lt")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wdnvf"]
+material = ExtResource("2_6g1lt")
+top_radius = 0.0
+bottom_radius = 0.05
+height = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6g1lt"]
+material = ExtResource("3_06il0")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_06il0"]
+material = ExtResource("3_06il0")
+top_radius = 0.0
+bottom_radius = 0.05
+height = 0.2
+
+[node name="markers" type="Node3D"]
+
+[node name="i" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("CylinderMesh_q70jo")
+
+[node name="tip" type="MeshInstance3D" parent="i"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_wsno6")
+
+[node name="j" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1, 0, 1.91069e-15, 0, 1, 0)
+mesh = SubResource("CylinderMesh_hrer2")
+
+[node name="tip" type="MeshInstance3D" parent="j"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_wdnvf")
+
+[node name="k" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("CylinderMesh_6g1lt")
+
+[node name="tip" type="MeshInstance3D" parent="k"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_06il0")

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://clu7ogc7wl6tw"]
+[gd_scene load_steps=3 format=3 uid="uid://clu7ogc7wl6tw"]
 
 [ext_resource type="Script" uid="uid://bgxxr5bdgtdbi" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b0tscgg5icyxt" path="res://markers.tscn" id="2_0xm2m"]
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_ig7tw")
+
+[node name="markers" parent="." instance=ExtResource("2_0xm2m")]

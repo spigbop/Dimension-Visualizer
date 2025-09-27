@@ -15,14 +15,14 @@ var active_cam: int = 0:
 
 
 func _set_active(index: int):
-	var pos = _cameras3d[active_cam].position
-	var rot = _cameras3d[active_cam].rotation
+	#var pos = _cameras3d[active_cam].position
+	#var rot = _cameras3d[active_cam].rotation
 
 	_cameras3d[index].make_current()
 	NDimWorld.inst().set_world(index)
 
-	_cameras3d[index].position = pos
-	_cameras3d[index].rotation = rot
+	#_cameras3d[index].position = pos
+	#_cameras3d[index].rotation = rot
 
 
 func _input(event: InputEvent) -> void:
@@ -48,13 +48,16 @@ func _init(dimensions: int = 4) -> void:
 func _ready() -> void:
 	for i in Math.n_chooses_p(_dimensions, 3):
 		var cam: Camera3D = Camera3D.new()
-		cam.rotation_degrees.y = 180.0
 		cam.projection = Camera3D.PROJECTION_ORTHOGONAL
-		cam.position.z -= 10.0
+		cam.size = 5.0
+		cam.position.x = 1.75
+		cam.position.y = 2.75
+		cam.position.z = 1.75
+		cam.rotation_degrees = Vector3(-45, 45, 0)
 		_cameras3d.append(cam)
 
 		add_child(cam)
-		cam.set_script(load("res://movecam.gd"))
+		cam.set_script(load("res://freecamera3d.gd"))
 
 	active_cam = 0
 	NDimWorld.inst().camera = self
