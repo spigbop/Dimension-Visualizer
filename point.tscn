@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnudsiaij6t3x"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ntw45"]
+radius = 0.05
+height = 0.1
+
+[node name="point" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_ntw45")
